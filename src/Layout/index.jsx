@@ -33,8 +33,6 @@ import {
 } from "@material-ui/icons";
 import { AiOutlineLogout } from "react-icons/ai";
 
-// Redux import
-import { useDispatch } from "react-redux";
 
 import { useStyles } from "./styles";
 import NavBar from "./NavBar";
@@ -44,7 +42,7 @@ import Footer from "./Footer";
 export default function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const location = useLocation();
   const anchorRef = useRef(null);
   const [menustate, setmenuState] = useState(false);
@@ -52,7 +50,7 @@ export default function MiniDrawer() {
   const [showMenu, setShowMenu] = useState(false);
 
   const handleLogout = () => {
-    dispatch(logout());
+    // dispatch(logout());
     localStorage.removeItem("userData");
   };
 
