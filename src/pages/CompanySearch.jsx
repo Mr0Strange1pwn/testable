@@ -158,9 +158,32 @@ export default function CompanySearch() {
       console.log("Search", filterdData);
       setrowDat(filterdData);
     } else {
+      console.log("type of row", typeof rows);
       setrowDat(rows);
     }
   }, [search]);
+
+  const handleSave = () => {
+    let arr = [...rowDat];
+    console.log("aasd", arr);
+    let index = rowDat.findIndex((val) => val.id == ind);
+
+    arr.splice(index, 1, {
+      id: ind,
+      lastName: item2,
+      firstName: item1,
+      age: arr[index].age,
+    });
+    setrowDat(arr);
+    console.log("aasd", typeof arr);
+    console.log("aasd ***", typeof rowDat);
+    console.log("aasd,,,,,,,", index, {
+      id: ind,
+      lastName: item2,
+      firstName: item1,
+      age: arr[index].age,
+    });
+  };
 
   return (
     <>
@@ -311,7 +334,7 @@ export default function CompanySearch() {
             container
             style={{ justifyContent: "flex-end", display: "flex" }}>
             <Grid Item style={{ marginRight: 5 }}>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" onClick={handleSave}>
                 save
               </Button>
             </Grid>
