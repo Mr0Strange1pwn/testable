@@ -77,19 +77,19 @@ export default function MiniDrawer() {
 
           <Grid container justify="flex-end" spacing={2}>
             <Grid item>
-              <Typography>section 1</Typography>
+              <Typography style={{ color: "white" }}>section 1</Typography>
             </Grid>
             <Grid item>
-              <Typography>section 2</Typography>
+              <Typography style={{ color: "white" }}>section 2</Typography>
             </Grid>
             <Grid item>
-              <Typography>section 3</Typography>
+              <Typography style={{ color: "white" }}>section 3</Typography>
             </Grid>
             <Grid item>
-              <Typography>section 4</Typography>
+              <Typography style={{ color: "white" }}>section 4</Typography>
             </Grid>
             <Grid item>
-              <Typography>section 5</Typography>
+              <Typography style={{ color: "white" }}>section 5</Typography>
             </Grid>
           </Grid>
         </Toolbar>

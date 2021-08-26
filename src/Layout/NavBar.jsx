@@ -19,15 +19,14 @@ const Paths = [
   },
   {
     title: "Side 3",
-    icon: <Search />,
+    icon: <Dashboard />,
     path: "/company-search",
   },
   {
     title: "Side 4",
-    icon: <AccountCircle />,
+    icon: <Dashboard />,
     path: "/saved-searches",
   },
-
 ];
 
 export default function NavBar() {

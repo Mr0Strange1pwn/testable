@@ -19,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& .table-head": {
       backgroundColor: "blue",
-      color: "black",
+      color: "white",
+      fontWeight: "bold",
     },
     "& .table-row-even": {
       backgroundColor: "#dfdfdf",
@@ -90,14 +91,14 @@ export default function CompanySearch() {
       headerName: "Header2",
       headerClassName: "table-head",
       width: 200,
-      editable: true,
+      editable: false,
     },
     {
       field: "lastName",
       headerName: "Header3",
       headerClassName: "table-head",
       width: 200,
-      editable: true,
+      editable: false,
     },
     {
       field: "age",
@@ -105,7 +106,7 @@ export default function CompanySearch() {
       type: "number",
       headerClassName: "table-head",
       width: 200,
-      editable: true,
+      editable: false,
     },
     {
       field: "fullName",
@@ -121,7 +122,7 @@ export default function CompanySearch() {
     },
     {
       field: "edit",
-      headerName: "Edit",
+      headerName: "Header6",
       sortable: false,
       headerClassName: "table-head",
       width: 200,
@@ -139,15 +140,15 @@ export default function CompanySearch() {
   ];
 
   const rows = [
-    { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-    { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-    { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-    { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-    { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: 100 },
-    { id: 6, lastName: "Melisandre", firstName: "pop", age: 150 },
-    { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-    { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-    { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
+    { id: 1, lastName: "Item1", firstName: "Item1", age: "Item1" },
+    { id: 2, lastName: "Item2", firstName: "Item2", age: "Item2" },
+    { id: 3, lastName: "Item3", firstName: "Item3", age: "Item3" },
+    { id: 4, lastName: "Item4", firstName: "Item4", age: "Item4" },
+    { id: 5, lastName: "Item5", firstName: "Item5", age: "Item5" },
+    { id: 6, lastName: "Item6", firstName: "Item6", age: "Item6" },
+    { id: 7, lastName: "Item7", firstName: "Item7", age: "Item7" },
+    { id: 8, lastName: "Item8", firstName: "Item8", age: "Item8" },
+    { id: 9, lastName: "Item9", firstName: "Item9", age: "Item9" },
   ];
 
   React.useEffect(() => {
@@ -175,6 +176,7 @@ export default function CompanySearch() {
       age: arr[index].age,
     });
     setrowDat(arr);
+    setOpen(false);
     console.log("aasd", typeof arr);
     console.log("aasd ***", typeof rowDat);
     console.log("aasd,,,,,,,", index, {
@@ -186,7 +188,13 @@ export default function CompanySearch() {
   };
 
   return (
-    <>
+    <div
+      style={{
+        width: "85%",
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+      }}>
       {/* search   */}
       <div
         style={{
@@ -347,6 +355,6 @@ export default function CompanySearch() {
           </Grid>
         </div>
       </Modal>
-    </>
+    </div>
   );
 }
