@@ -57,9 +57,10 @@ export default function CompanySearch() {
     const handleEditClick = () => {
       setOpen(true);
       setInd(index);
-      setitem1(rowDat[index].firstName);
-      setitem2(rowDat[index].lastName);
-      setitem3(rowDat[index].lastName);
+      let obj = rowDat.filter((val) => val.id == index)[0];
+      setitem1(obj.firstName);
+      setitem2(obj.lastName);
+      setitem3(obj.lastName);
       console.log(rowDat[index]);
     };
 
@@ -123,7 +124,7 @@ export default function CompanySearch() {
       headerName: "Edit",
       sortable: false,
       headerClassName: "table-head",
-
+      width: 200,
       disableClickEventBubbling: true,
       renderCell: (params) => {
         return (
