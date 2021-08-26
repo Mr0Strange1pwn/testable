@@ -33,7 +33,6 @@ import {
 } from "@material-ui/icons";
 import { AiOutlineLogout } from "react-icons/ai";
 
-
 import { useStyles } from "./styles";
 import NavBar from "./NavBar";
 import Navigations from "../Routes/Navigations";
@@ -74,59 +73,23 @@ export default function MiniDrawer() {
                 onClick={() => setmenuState(true)}
               />
             </Grid>
-            
           </Grid>
 
           <Grid container justify="flex-end" spacing={2}>
             <Grid item>
-            <Typography>section </Typography>
+              <Typography>section 1</Typography>
             </Grid>
             <Grid item>
-            <Typography>section </Typography>
+              <Typography>section 2</Typography>
             </Grid>
             <Grid item>
-              <Typography
-                paragraph
-                ref={anchorRef}
-                aria-controls={showMenu ? "menu-list-grow" : undefined}
-                aria-haspopup="true"
-                onClick={setShowMenu}>
-                Users name {showMenu ? <ArrowDropUp /> : <ArrowDropDown />}
-              </Typography>
-              {/* <Button
-                ref={anchorRef}
-                aria-controls={showMenu ? "menu-list-grow" : undefined}
-                aria-haspopup="true"
-                onClick={setShowMenu}>
-                users Name
-              </Button> */}
-              <Popper
-                open={showMenu}
-                anchorEl={anchorRef.current}
-                role={undefined}
-                transition
-                disablePortal>
-                {({ TransitionProps, placement }) => (
-                  <Grow
-                    {...TransitionProps}
-                    style={{
-                      transformOrigin:
-                        placement === "bottom" ? "center top" : "center bottom",
-                    }}>
-                    <Paper>
-                      <ClickAwayListener onClickAway={() => setShowMenu(false)}>
-                        <MenuList
-                          autoFocusItem={showMenu}
-                          id="menu-list-grow"
-                          onKeyDown={() => setShowMenu(false)}>
-                          <MenuItem onClick={() => {}}>section </MenuItem>
-                          <MenuItem onClick={() => {}}>section </MenuItem><MenuItem onClick={() => {}}>section </MenuItem><MenuItem onClick={() => {}}>section </MenuItem>
-                        </MenuList>
-                      </ClickAwayListener>
-                    </Paper>
-                  </Grow>
-                )}
-              </Popper>
+              <Typography>section 3</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>section 4</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>section 5</Typography>
             </Grid>
           </Grid>
         </Toolbar>

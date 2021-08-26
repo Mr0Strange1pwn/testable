@@ -13,7 +13,7 @@ export const useStyles = makeStyles((theme) => ({
             duration: theme.transitions.duration.leavingScreen,
         }),
         color: "#8a8fa7",
-        backgroundColor: "#fafafa",
+        backgroundColor: "black",
     },
     appBarShift: {
         marginLeft: drawerWidth,
@@ -40,7 +40,7 @@ export const useStyles = makeStyles((theme) => ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
-        backgroundColor: "#23273a",
+        backgroundColor: "black",
         color: "#8a8fa7",
     },
     drawerClose: {
@@ -53,7 +53,7 @@ export const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up("sm")]: {
             width: theme.spacing(9) + 1,
         },
-        backgroundColor: "#23273a",
+        backgroundColor: "black",
     },
     toolbar: {
         display: "flex",
