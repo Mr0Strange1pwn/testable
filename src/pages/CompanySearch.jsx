@@ -8,6 +8,7 @@ import {
   Typography,
   Switch,
   Button,
+  Divider,
 } from "@material-ui/core";
 import { DataGrid } from "@material-ui/data-grid";
 
@@ -18,21 +19,21 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& .table-head": {
       backgroundColor: "blue",
-      color: "white",
+      color: "black",
     },
     "& .table-row-even": {
       backgroundColor: "#dfdfdf",
-      color: "white",
+      color: "black",
     },
     "& .table-row-odd": {
       backgroundColor: "#40acfb",
-      color: "white",
+      color: "black",
     },
   },
   paper: {
     position: "absolute",
     width: 400,
-    height: 500,
+    height: 600,
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
@@ -47,10 +48,19 @@ export default function CompanySearch() {
 
   const [open, setOpen] = React.useState(false);
   const [checked, setChacked] = React.useState(true);
+  const [ind, setInd] = React.useState();
+  const [item1, setitem1] = React.useState();
+  const [item2, setitem2] = React.useState();
+  const [item3, setitem3] = React.useState();
 
   const MatEdit = ({ index }) => {
     const handleEditClick = () => {
       setOpen(true);
+      setInd(index);
+      setitem1(rowDat[index].firstName);
+      setitem2(rowDat[index].lastName);
+      setitem3(rowDat[index].lastName);
+      console.log(rowDat[index]);
     };
 
     return (
@@ -70,35 +80,35 @@ export default function CompanySearch() {
   const columns = [
     {
       field: "id",
-      headerName: "ID",
-      width: 100,
+      headerName: "Header1",
+      width: 200,
       headerClassName: "table-head",
     },
     {
       field: "firstName",
-      headerName: "First name",
+      headerName: "Header2",
       headerClassName: "table-head",
-      width: 150,
+      width: 200,
       editable: true,
     },
     {
       field: "lastName",
-      headerName: "Last name",
+      headerName: "Header3",
       headerClassName: "table-head",
-      width: 150,
+      width: 200,
       editable: true,
     },
     {
       field: "age",
-      headerName: "Age",
+      headerName: "Header4",
       type: "number",
       headerClassName: "table-head",
-      width: 110,
+      width: 200,
       editable: true,
     },
     {
       field: "fullName",
-      headerName: "Full name",
+      headerName: "Header5",
       description: "This column has a value getter and is not sortable.",
       headerClassName: "table-head",
       sortable: false,
@@ -113,7 +123,7 @@ export default function CompanySearch() {
       headerName: "Edit",
       sortable: false,
       headerClassName: "table-head",
-      width: 140,
+
       disableClickEventBubbling: true,
       renderCell: (params) => {
         return (
@@ -192,12 +202,15 @@ export default function CompanySearch() {
         aria-describedby="simple-modal-description">
         <div
           style={{
-            top: `20%`,
+            top: `10%`,
             left: `30%`,
           }}
           className={classes.paper}>
+          <Typography style={{ margin: 5 }}>Edit</Typography>
+          <Divider style={{ marginTop: 5, marginBottom: 10 }} />
+
           {/* field Container */}
-          <Grid container style={{ height: "60%" }}>
+          <Grid container style={{ height: "50%" }}>
             <Grid
               item
               style={{ justifyContent: "space-around", display: "flex" }}>
@@ -206,6 +219,8 @@ export default function CompanySearch() {
                 id="outlined-basic"
                 label="Item 1"
                 variant="outlined"
+                value={item1}
+                onChange={(e) => setitem1(e.target.value)}
               />
             </Grid>
 
@@ -217,6 +232,8 @@ export default function CompanySearch() {
                 id="outlined-basic"
                 label="Item 2"
                 variant="outlined"
+                value={item2}
+                onChange={(e) => setitem2(e.target.value)}
               />
             </Grid>
 
@@ -241,10 +258,10 @@ export default function CompanySearch() {
             <Grid
               Item
               style={{ justifyContent: "space-around", display: "flex" }}>
-              <Typography>category</Typography>
+              <Typography>category1</Typography>
               <Switch
                 checked={checked}
-                onChange={setChacked}
+                onChange={() => setChacked(!checked)}
                 color="primary"
                 name="checkedB"
                 inputProps={{ "aria-label": "primary checkbox" }}
@@ -253,10 +270,10 @@ export default function CompanySearch() {
             <Grid
               Item
               style={{ justifyContent: "space-around", display: "flex" }}>
-              <Typography>category</Typography>
+              <Typography>category2</Typography>
               <Switch
                 checked={checked}
-                onChange={setChacked}
+                onChange={() => setChacked(!checked)}
                 color="primary"
                 name="checkedB"
                 inputProps={{ "aria-label": "primary checkbox" }}
@@ -265,10 +282,22 @@ export default function CompanySearch() {
             <Grid
               Item
               style={{ justifyContent: "space-around", display: "flex" }}>
-              <Typography>category</Typography>
+              <Typography>category3</Typography>
               <Switch
                 checked={checked}
-                onChange={setChacked}
+                onChange={() => setChacked(!checked)}
+                color="primary"
+                name="checkedB"
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />
+            </Grid>
+            <Grid
+              Item
+              style={{ justifyContent: "space-around", display: "flex" }}>
+              <Typography>category4</Typography>
+              <Switch
+                checked={checked}
+                onChange={() => setChacked(!checked)}
                 color="primary"
                 name="checkedB"
                 inputProps={{ "aria-label": "primary checkbox" }}
